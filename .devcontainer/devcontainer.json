@@ -3,7 +3,15 @@
   "features": {
     "ghcr.io/devcontainers/features/desktop-lite:1": {}
   },
+  "updateContentCommand": "pip install pygame-ce",
   "forwardPorts": [6080],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  },
   "portsAttributes": {
     "6080": {
       "label": "desktop"
