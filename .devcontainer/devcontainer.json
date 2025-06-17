@@ -1,20 +1,21 @@
-{
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+{  
+  "name": "Python Development with VNC Desktop",
+  "image": "mcr.microsoft.com/devcontainers/python:3.9",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y python3-tk xvfb x11vnc",
   "features": {
     "ghcr.io/devcontainers/features/desktop-lite:1": {}
   },
   "updateContentCommand": "pip install pygame-ce",
-  "forwardPorts": [6080],
   "customizations": {
     "vscode": {
-      "extensions": [
-        "ms-python.python"
-      ]
+      "extensions": ["ms-python.python"]
     }
   },
+  "forwardPorts": [6080],
   "portsAttributes": {
     "6080": {
       "label": "desktop"
     }
-  }
+  },
+  "remoteUser": "vscode"
 }
